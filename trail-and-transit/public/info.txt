@@ -1,0 +1,1 @@
+can place picture here to be imported into src/App.jsx as 'import pic from /pic.svg'
