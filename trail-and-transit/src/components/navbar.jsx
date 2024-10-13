@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
-import { MenuItem, Menu } from 'semantic-ui-react'
+import { MenuMenu, MenuItem, Menu, Item, Image, ItemImage, ItemGroup } from 'semantic-ui-react'
 import { Link } from 'react-router-dom';
+import logo from '../assets/logo.jpg'
 
 function Navbar() {
   // handle each click to set the sate of the 'activeItem' to the name of the thing that was clicked
@@ -11,17 +12,17 @@ function Navbar() {
     };
 
     return (
-      <Menu>
+      <Menu secondary>
         <Link to="/" relative="path">
         <MenuItem
           name='home'
-          active={activeItem === 'home'}
           onClick={handleItemClick}
           as="div"
         >
-          Home
+          <ItemImage size='tiny' src={logo} id="nav-logo"/>
         </MenuItem>
         </Link>
+        <MenuMenu position='right'>
         <Link to="/peru" relative="path">
         <MenuItem
           name='peru'
@@ -53,6 +54,7 @@ function Navbar() {
           About
         </MenuItem>
         </Link>
+        </MenuMenu>
       </Menu>
     )
 }
